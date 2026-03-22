@@ -14,19 +14,17 @@ libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 ## Installation
 Install `pyenv`:
 ```bash
-curl https://pyenv.run | bash
+curl -fsSL https://pyenv.run | bash
 ```
 
 Open the `~/.bashrc` file and append the following:
 ```
 # Load pyenv automatically 
-
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
 
 # Load pyenv-virtualenv automatically 
-
 eval "$(pyenv virtualenv-init -)"
 ```
 
